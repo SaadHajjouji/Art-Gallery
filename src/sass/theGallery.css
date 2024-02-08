@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+.headingPrimaryGallery {
+  margin: 6rem 0px 2rem 0px;
+  text-transform: uppercase;
+}
+
+.headingPrimaryGallery span {
+  text-align: center;
+}
+
+.headingPrimaryGallery .title {
+  color: black;
+  font-family: "archivo";
+  font-weight: lighter;
+  font-size: 2.3rem;
+  display: block;
+}
+
+.browser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 3.4rem;
+}
+
+.browser__item {
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.browser__item:not(:last-child) {
+  border-right: 1px solid black;
+  padding-right: 1rem;
+}
+
+.browser__item button {
+  font-family: "archivo";
+  font-weight: 700;
+  color: black;
+  font-size: 2rem;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.browser__item button:hover {
+  border-bottom: 1px solid black;
+}
+
+.aboutSection {
+  margin: 3rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Work Sans";
+  color: black;
+  padding: 5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 85%;
+  gap: 3rem;
+}
+
+@media (max-width: 37.5em) {
+  .aboutSection {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    padding: unset;
+  }
+}
+
+@media (max-width: 75em) {
+  .aboutSection {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    padding: unset;
+  }
+}
+
+.aboutSection .aboutText {
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 80%;
+}
+
+@media (max-width: 37.5em) {
+  .aboutSection .aboutText {
+    width: 100%;
+  }
+}
+
+.aboutSection .aboutText p {
+  padding: 0rem 2rem;
+  font-size: 2.3rem;
+  font-weight: 800;
+}
+
+@media (max-width: 37.5em) {
+  .aboutSection .aboutText p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .aboutSection .aboutText p {
+    font-size: 1rem;
+  }
+}
+
+.aboutSection .aboutText button {
+  color: black;
+  font-size: 2rem;
+  padding: 0.5rem 2rem;
+  border: 1px solid black;
+}
+
+@media (max-width: 37.5em) {
+  .aboutSection .aboutText button {
+    font-size: 1.3rem;
+  }
+}
+
+.aboutSection .aboutText button:hover {
+  background-color: black;
+  color: white;
+}
+
+.aboutSection img {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 37.5em) {
+  .aboutSection img {
+    width: 100%;
+  }
+}
+
+.storeSection {
+  margin: 3rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 5rem;
+  width: 85%;
+  border-radius: 3rem;
+}
+
+@media (max-width: 37.5em) {
+  .storeSection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .storeSection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.storeSection .aboutText h2 {
+  margin-bottom: 1.4rem;
+  font-size: 4.1rem;
+  font-weight: 700;
+}
+
+@media (max-width: 37.5em) {
+  .storeSection .aboutText h2 {
+    font-size: 3rem;
+  }
+}
+
+.storeSection .aboutText p {
+  width: 50%;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+@media (max-width: 37.5em) {
+  .storeSection .aboutText p {
+    width: 100%;
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .storeSection .aboutText p {
+    width: 100%;
+    font-size: 2rem;
+  }
+}
+
+.storeSection .aboutText button {
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 2rem;
+  border: 1px solid white;
+}
+
+@media (max-width: 37.5em) {
+  .storeSection .aboutText button {
+    font-size: 1.3rem;
+  }
+}
+
+.storeSection .aboutText button:hover {
+  background-color: white;
+  color: black;
+}
+
+.storeSection img {
+  width: 100%;
+  border-radius: 5rem;
+}
+
+@media (max-width: 37.5em) {
+  .storeSection img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 75em) {
+  .storeSection img {
+    width: 100%;
+    max-height: 50%;
+  }
+}
+
+.owner {
+  margin: 3rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+  height: 50rem;
+  width: 85%;
+}
+
+@media (max-width: 37.5em) {
+  .owner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: unset;
+  }
+}
+
+@media (max-width: 75em) {
+  .owner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: unset;
+  }
+}
+
+.owner .ownerInfo {
+  height: inherit;
+}
+
+.owner .ownerInfo .ownerPhoto {
+  width: 40rem;
+  height: inherit;
+  background-color: orangered;
+}
+
+@media (max-width: 37.5em) {
+  .owner .ownerInfo .ownerPhoto {
+    width: 100%;
+    height: 30rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .owner .ownerInfo .ownerPhoto {
+    width: 100%;
+    height: 30rem;
+  }
+}
+
+.owner .ownerInfo .ownerName {
+  font-family: "Work Sans";
+  color: black;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.owner p {
+  color: black;
+  font-family: "Work Sans";
+  font-weight: 700;
+  font-size: 1.4rem;
+  width: 50%;
+  overflow-y: scroll;
+  height: inherit;
+  scrollbar-width: normal;
+  padding-right: 5rem;
+}
+
+@media (max-width: 37.5em) {
+  .owner p {
+    width: 100%;
+    height: unset;
+    padding-right: unset;
+  }
+}
+
+@media (max-width: 75em) {
+  .owner p {
+    width: 100%;
+    height: unset;
+    padding-right: unset;
+  }
+}
+
+.owner p::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 2rem;
+  padding: 10rem;
+}
+
+.owner p::-webkit-scrollbar-thumb {
+  background-color: #b8b7b7;
+  border-radius: 2rem;
+}
+/*# sourceMappingURL=theGallery.css.map */

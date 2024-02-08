@@ -1,0 +1,16 @@
+@keyframes load {
+  0% {
+    background-color: white;
+    filter: blur(1.5rem);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+.loadingScreen {
+  width: 100vw;
+  height: 100vh;
+  animation-name: load;
+  animation-duration: 0.2s;
+}

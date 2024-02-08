@@ -1,0 +1,261 @@
+//colors coppied here bcs they dont import
+$color-main: rgb(0, 0, 0);
+$color-secondary: rgb(255, 255, 255);
+$color-text: #8f8d8d;
+@mixin btn($clrmain, $clrsec) {
+  button {
+    color: $clrsec;
+    font-size: 2rem;
+    padding: 0.5rem 2rem;
+    border: 1px solid $clrsec;
+    @include respond(phone) {
+      font-size: 1.3rem;
+    }
+    &:hover {
+      background-color: $clrsec;
+      color: $clrmain;
+    }
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+@mixin respond($breakpoint) {
+  @if $breakpoint==phone {
+    @media (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+  @if $breakpoint==tab-port {
+    @media (max-width: 56.25em) {
+      // 900px
+      @content;
+    }
+  }
+  @if $breakpoint==tab-land {
+    @media (max-width: 75em) {
+      // 1200px
+      @content;
+    }
+  }
+  @if $breakpoint==big-desktop {
+    @media (min-width: 95em) {
+      // 1800px
+      @content;
+    }
+  }
+}
+.headingPrimaryGallery {
+  margin: 6rem 0px 2rem 0px;
+  text-transform: uppercase;
+  span {
+    text-align: center;
+  }
+  .title {
+    color: $color-main;
+    font-family: "archivo";
+    font-weight: lighter;
+    font-size: 2.3rem;
+    display: block;
+  }
+}
+.browser {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.4rem;
+  &__item {
+    text-transform: uppercase;
+    cursor: pointer;
+    &:not(:last-child) {
+      border-right: 1px solid $color-main;
+      padding-right: 1rem;
+    }
+    margin-left: 1rem;
+    button {
+      font-family: "archivo";
+      font-weight: 700;
+      color: $color-main;
+      font-size: 2rem;
+      border-bottom: 1px solid transparent;
+      transition: 0.2s ease-in-out;
+      &:hover {
+        border-bottom: 1px solid $color-main;
+      }
+    }
+  }
+}
+
+.aboutSection {
+  margin: 3rem auto;
+  display: flex;
+  font-family: "Work Sans";
+  color: $color-main;
+  padding: 5rem;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 85%;
+  gap: 3rem;
+  @include respond(phone) {
+    flex-direction: column !important;
+    padding: unset;
+  }
+  @include respond(tab-land) {
+    flex-direction: column !important;
+    padding: unset;
+  }
+
+  .aboutText {
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 80%;
+    @include respond(phone) {
+      width: 100%;
+    }
+    p {
+      padding: 0rem 2rem;
+      font-size: 2.3rem;
+      font-weight: 800;
+
+      @include respond(phone) {
+        font-size: 1rem;
+      }
+      @include respond(tab-land) {
+        font-size: 1rem;
+      }
+    }
+    @include btn($color-secondary, $color-main);
+  }
+  img {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+}
+
+.storeSection {
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  background-color: $color-main;
+  color: $color-secondary;
+  padding: 5rem;
+  width: 85%;
+  border-radius: 3rem;
+  @include respond(phone) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  @include respond(tab-land) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .aboutText {
+    h2 {
+      margin-bottom: 1.4rem;
+      font-size: 4.1rem;
+      font-weight: 700;
+      @include respond(phone) {
+        font-size: 3rem;
+      }
+    }
+
+    p {
+      width: 50%;
+      font-size: 3rem;
+      font-weight: 200;
+      @include respond(phone) {
+        width: 100%;
+        font-size: 1.7rem;
+      }
+      @include respond(tab-land) {
+        width: 100%;
+        font-size: 2rem;
+      }
+    }
+    @include btn($color-main, $color-secondary);
+  }
+  img {
+    @include respond(phone) {
+      width: 100%;
+    }
+    @include respond(tab-land) {
+      width: 100%;
+      max-height: 50%;
+    }
+    width: 100%;
+    border-radius: 5rem;
+  }
+}
+
+.owner {
+  margin: 3rem auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  height: 50rem;
+  width: 85%;
+  @include respond(phone) {
+    flex-direction: column;
+    height: unset;
+  }
+  @include respond(tab-land) {
+    flex-direction: column;
+    height: unset;
+  }
+  .ownerInfo {
+    height: inherit;
+    .ownerPhoto {
+      width: 40rem;
+      height: inherit;
+      background-color: orangered;
+      @include respond(phone) {
+        width: 100%;
+        height: 30rem;
+      }
+      @include respond(tab-land) {
+        width: 100%;
+        height: 30rem;
+      }
+    }
+    .ownerName {
+      font-family: "Work Sans";
+      color: $color-main;
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+  }
+  p {
+    color: $color-main;
+    font-family: "Work Sans";
+    font-weight: 700;
+    font-size: 1.4rem;
+    width: 50%;
+    overflow-y: scroll;
+    height: inherit;
+    scrollbar-width: normal;
+    padding-right: 5rem;
+    @include respond(phone) {
+      width: 100%;
+      height: unset;
+      padding-right: unset;
+    }
+    @include respond(tab-land) {
+      width: 100%;
+      height: unset;
+      padding-right: unset;
+    }
+    &::-webkit-scrollbar {
+      width: 4px;
+      border-radius: 2rem;
+      padding: 10rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(184, 183, 183);
+      border-radius: 2rem;
+    }
+  }
+}

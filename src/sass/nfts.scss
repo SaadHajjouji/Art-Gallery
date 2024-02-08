@@ -1,0 +1,515 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@keyframes rotating {
+  from {
+    -ms-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  to {
+    -ms-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+.startHere {
+  font-size: 2.3rem;
+  border: 1px solid rgb(255, 255, 255);
+
+  -webkit-box-shadow: 0px 0px 20px -4px rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 0px 20px -4px rgba(255, 255, 255, 0.9);
+  border-radius: 3.4rem;
+  padding: 7px 10px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Poppins";
+  transition: 0.2s ease;
+  margin-top: 1.4rem;
+  @include respond(phone) {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  @include respond(tab-land) {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  &:hover {
+    transform: scale(1.1);
+    color: white;
+    -webkit-box-shadow: 0px 0px 40px -4px #ffffffe6;
+    box-shadow: 0px 0px 40px -4px rgba(255, 255, 255, 0.9);
+  }
+}
+.backgroundvid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1000;
+  @include respond(phone) {
+    display: none;
+  }
+  @include respond(tab-land) {
+    display: none;
+  }
+}
+.fullnftPage {
+  background-color: transparent;
+  .headingPrimaryNft {
+    text-transform: uppercase;
+    color: $color-secondary;
+    text-align: center;
+    font-family: "Archivo black";
+    font-weight: lighter;
+    font-size: 3rem;
+    padding: 8rem 0px 0.3rem 0px;
+  }
+  @include respond(phone) {
+    background-color: $color-main;
+  }
+  @include respond(tab-land) {
+    background-color: $color-main;
+  }
+}
+.headerNft {
+  background-color: transparent;
+  padding-top: 7rem;
+  @include respond(phone) {
+    padding-top: 1rem;
+    background-color: black;
+  }
+  @include respond(tab-land) {
+    background-color: black;
+    padding-top: 2rem;
+  }
+  .navBarNft {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-inline: $padding-inline-main;
+
+    @include respond(phone) {
+      padding-inline: $padding-inline-phone !important;
+      align-items: flex-end;
+    }
+    @include respond(tab-land) {
+      padding-inline: $padding-inline-tab;
+      align-items: flex-end;
+    }
+    .logo {
+      width: 17rem;
+      @include respond(phone) {
+        width: 12rem !important;
+      }
+      @include respond(tab-land) {
+        width: 19rem;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .navListNft {
+      display: inline-block;
+      @include respond(phone) {
+        display: none;
+      }
+      @include respond(tab-land) {
+        display: none;
+      }
+      color: $color-secondary;
+      align-items: center;
+      font-weight: 800;
+      &__item {
+        display: inline-block;
+        font-size: 1.4rem;
+        margin-left: 1rem;
+        width: auto;
+        text-transform: uppercase;
+        border-bottom: 1.5px solid transparent;
+
+        &:not(:last-child) {
+          padding-right: 1rem;
+          border-right: 0.2px solid $color-text;
+        }
+        &:hover {
+          transition: 0.5s;
+          a {
+            border-bottom: 1.5px solid $color-main;
+          }
+        }
+      }
+    }
+
+    .subscribeBtn {
+      margin: 0;
+      border: none;
+      outline: none;
+      text-align: center;
+      background-color: transparent;
+      font-family: "archivo";
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      color: $color-secondary;
+      border-bottom: 1px solid transparent;
+      line-height: 1;
+      transition: 0.5s ease-in-out;
+      &:hover {
+        border-bottom: 1px solid $color-main;
+      }
+      @include respond(phone) {
+        display: none;
+      }
+      @include respond(tab-land) {
+        display: none;
+      }
+    }
+    .mobileNavIcons {
+      color: $color-secondary;
+      display: none;
+      font-size: 3rem;
+      @include respond(phone) {
+        display: block;
+        font-size: 1.89rem !important;
+      }
+      @include respond(tab-land) {
+        display: block;
+        font-size: 2.6rem;
+      }
+    }
+  }
+}
+.mobileNavListNft {
+  padding-inline: $padding-inline-phone;
+  color: $color-secondary;
+  font-family: "archivo";
+  font-weight: 800;
+  background-color: $color-main;
+  height: 100vh;
+  &__list {
+    display: none;
+    padding-top: 2rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    width: 100%;
+    @include respond(tab-land) {
+      display: block;
+    }
+  }
+
+  .additionalNavOptions {
+    font-size: 2rem;
+    margin: 4rem 0px;
+  }
+
+  .icons {
+    font-size: 2.4rem;
+    display: flex;
+    .icon1 {
+      margin-right: 8px;
+    }
+  }
+}
+
+.presentation {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  @include respond(phone) {
+    width: 100%;
+    flex-direction: column;
+    gap: 4rem;
+    @include padding-inline();
+  }
+  @include respond(tab-land) {
+    width: 100%;
+    @include padding-inline();
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .presentationText {
+    width: 60%;
+    color: $color-secondary;
+    font-size: 3rem;
+
+    @include respond(phone) {
+      width: 100%;
+      font-size: 2rem !important;
+    }
+    @include respond(tab-land) {
+      width: 100%;
+      font-size: 2.7rem;
+    }
+    p {
+      font-family: "Poppins";
+    }
+  }
+  .bigEther {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+    img,
+    svg {
+      vertical-align: top;
+      @include respond(phone) {
+        vertical-align: center;
+      }
+    }
+    color: rgb(255, 255, 255);
+    height: 40rem;
+    margin: auto auto;
+    width: 30%;
+    font-size: 37rem;
+    @include respond(phone) {
+      display: none;
+    }
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
+}
+
+.artworkNFT {
+  padding: 12rem 0px;
+
+  .headingsecond {
+    @include padding-inline();
+
+    color: $color-secondary;
+    background-clip: text;
+    font-weight: 800;
+    font-size: 4rem;
+    text-transform: uppercase;
+
+    font-family: "Poppins";
+    @include respond(phone) {
+      font-size: 2.7rem !important;
+    }
+    @include respond(tab-land) {
+      font-size: 3rem;
+    }
+  }
+
+  .artCards {
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include padding-inline();
+    @include respond(phone) {
+      width: 100%;
+      justify-content: center;
+      margin-top: 5rem;
+    }
+    @include respond(tab-land) {
+      justify-content: center;
+    }
+    .artCard {
+      &:hover {
+        transform: scale(1.02);
+        // -webkit-box-shadow: 0px 0px 37px -4px rgba(255, 18, 62, 0.9);
+        // box-shadow: 0px 0px 37px -4px rgba(255, 18, 62, 0.9);
+        -webkit-box-shadow: 0px 0px 20px -4px rgba(255, 255, 255, 0.9);
+        box-shadow: 0px 0px 20px -4px rgba(255, 255, 255, 0.9);
+        border: 1px solid white;
+      }
+      cursor: pointer;
+      transition: 0.1s ease-in-out;
+      border: 1px solid rgb(185, 181, 181);
+      border-radius: 3rem;
+      width: 20%;
+      @include respond(phone) {
+        width: 100% !important;
+      }
+      @include respond(tab-land) {
+        width: 40%;
+      }
+      .image {
+        width: 100%;
+        height: 20rem;
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+      }
+      .artinfo {
+        display: flex;
+        justify-content: space-between;
+        color: $color-secondary;
+        font-size: 1.9rem;
+        font-family: "Poppins";
+        padding: 1.9rem;
+        .price {
+          .ether {
+            color: $color-secondary;
+          }
+        }
+      }
+    }
+  }
+}
+.guideNft {
+  padding: 12rem 0px;
+  width: 70%;
+  margin: 0 auto;
+  color: $color-secondary;
+  @include padding-inline();
+  @include respond(phone) {
+    width: 100% !important;
+  }
+  @include respond(tab-land) {
+    width: 100%;
+  }
+  .headingsecond {
+    text-align: center;
+    @include padding-inline();
+
+    color: $color-secondary;
+    background-clip: text;
+    font-weight: 800;
+    font-size: 4rem;
+    text-transform: uppercase;
+
+    font-family: "Poppins";
+    @include respond(phone) {
+      font-size: 2.7rem !important;
+    }
+    @include respond(tab-land) {
+      font-size: 3rem;
+    }
+  }
+
+  .introOpenSea {
+    font-size: 2.6rem;
+    color: $color-secondary;
+    margin-top: 1.2rem;
+    text-align: center;
+  }
+  hr {
+    width: 50%;
+    color: white;
+    margin: 1rem auto;
+  }
+  .articleGuide {
+    p {
+      font-size: 2rem;
+    }
+  }
+  .articles {
+    h3 {
+      color: $color-secondary;
+      font-size: 2.5rem;
+      text-decoration: underline;
+    }
+    p {
+      font-size: 2rem;
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.footerNft {
+  * {
+    font-family: "archivo";
+    font-weight: 800;
+    color: $color-secondary;
+  }
+  background-color: transparent;
+  @include respond(phone) {
+    background-color: $color-main;
+    .footer_info {
+      display: flex;
+      gap: 1.3rem !important;
+      flex-direction: column;
+      align-items: center !important;
+    }
+  }
+  @include respond(tab-land) {
+    background-color: $color-main;
+    .footer_info {
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.3rem !important;
+    }
+  }
+  p {
+    @include respond(phone) {
+      width: 95%;
+      font-size: 1.1rem;
+    }
+    @include respond(tab-land) {
+      width: 90%;
+      font-size: 1.1rem;
+    }
+    font-size: 1.3rem;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 2.7rem;
+  }
+  .hr {
+    // border-top: 1px solid $color-secondary;
+    // width: 50%;
+    // margin: 0 auto;
+    // padding-bottom: 2.7rem;
+  }
+  .footer_info {
+    padding-bottom: 2.7rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .subscribe {
+      text-transform: uppercase;
+    }
+    .socials {
+      .socialIcon {
+        font-size: 2.1rem;
+        margin-inline: 0.8rem;
+      }
+    }
+  }
+}
+
+.scrollUpThePageNft {
+  margin-left: $padding-inline-main;
+  @include respond(phone) {
+    margin-left: 1rem;
+  }
+  @include respond(tab-land) {
+    margin-left: 1rem;
+  }
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 1rem;
+  font-size: 4.5rem;
+  cursor: pointer;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
+  padding: 1rem;
+  color: $color-secondary;
+  border: 1px solid $color-secondary;
+  transition: 0.1s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+}

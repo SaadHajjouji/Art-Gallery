@@ -1,0 +1,33 @@
+@-webkit-keyframes load {
+  0% {
+    background-color: white;
+    -webkit-filter: blur(1.5rem);
+            filter: blur(1.5rem);
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+}
+
+@keyframes load {
+  0% {
+    background-color: white;
+    -webkit-filter: blur(1.5rem);
+            filter: blur(1.5rem);
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+}
+
+.loadingScreen {
+  width: 100vw;
+  height: 100vh;
+  -webkit-animation-name: load;
+          animation-name: load;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+/*# sourceMappingURL=LoadingScreen.css.map */

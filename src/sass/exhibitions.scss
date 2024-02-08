@@ -1,0 +1,730 @@
+* {
+  font-family: "archivo";
+}
+@keyframes sectionAnimation {
+  0% {
+    transform: translateY(8rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.animateSection {
+  animation-name: sectionAnimation;
+  animation-duration: 2s;
+}
+
+@mixin contentInfo {
+  @include respond(phone) {
+    .artistName {
+      font-size: 1.8rem !important;
+    }
+    .pieceTitle {
+      font-size: 1.9rem !important;
+    }
+    .dimensions {
+      font-size: 1.2rem !important;
+    }
+    .medium {
+      font-size: 1.16rem !important;
+    }
+  }
+  @include respond(tab-land) {
+    .artistName {
+      font-size: 1.8rem !important;
+    }
+    .pieceTitle {
+      font-size: 1.9rem !important;
+    }
+    .dimensions {
+      font-size: 1.2rem !important;
+    }
+    .medium {
+      font-size: 1.16rem !important;
+    }
+  }
+  span {
+    display: block;
+  }
+  .artistName {
+    color: $color-main;
+    font-size: 2.5rem;
+    font-weight: 900;
+  }
+  .pieceTitle {
+    font-size: 2.278rem;
+    font-style: italic;
+  }
+  .dimensions {
+    font-size: 1.82rem;
+  }
+  .medium {
+    font-size: 1.7rem;
+  }
+}
+
+//helper classes
+.left {
+  margin-right: auto;
+}
+.right {
+  margin-left: auto;
+}
+@mixin scrollbar() {
+  scrollbar-width: normal;
+  padding-bottom: 1rem;
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    border-radius: 2rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(184, 183, 183);
+    border-radius: 2rem;
+  }
+}
+
+@mixin titles() {
+  font-size: 10rem;
+  margin-bottom: 3rem;
+  font-weight: 800;
+  color: $color-main;
+  @include respond(phone) {
+    font-size: 4rem;
+  }
+  @include respond(tab-land) {
+    font-size: 4rem;
+  }
+}
+@mixin artparagraph($color) {
+  .textIntro {
+    color: $color;
+    .languages {
+      text-align: end;
+      .textLanguage {
+        font-size: 3rem;
+        font-weight: 600;
+        cursor: pointer;
+        &:not(:last-child) {
+          margin-right: 1.5rem;
+        }
+        &:hover,
+        &:visited {
+          border-bottom: 1px solid $color-secondary;
+        }
+        @include respond(phone) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .intro,
+    .author {
+      display: block;
+      border-left: 5px solid $color;
+      padding-left: 3rem;
+    }
+    .intro {
+      font-family: "garamond";
+      font-size: 8rem;
+      @include respond(phone) {
+        font-size: 2rem !important;
+      }
+      @include respond(tab-land) {
+        font-size: 3rem;
+      }
+    }
+    .author {
+      font-size: 2.7rem;
+      margin-bottom: 3rem;
+      font-weight: 500;
+      @include respond(phone) {
+        font-size: 1.6rem !important;
+      }
+      @include respond(tab-land) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  p {
+    color: $color;
+    width: 100%;
+    white-space: break-spaces;
+    // font-weight: 700;
+    font-size: 2rem;
+    @include respond(phone) {
+      font-size: 1.3rem !important;
+    }
+    @include respond(tab-land) {
+      font-size: 1.6rem;
+    }
+  }
+  .overflowHidden {
+    @include respond(phone) {
+      height: 20vh;
+    }
+    height: 30vh;
+    overflow: hidden;
+  }
+  .overflowVisible {
+    height: auto;
+    overflow: visible;
+  }
+  .readMore {
+    padding: 1rem 1.5rem;
+    display: block;
+    margin-left: auto;
+    color: $color;
+    font-size: 1.6rem;
+    font-weight: 800;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+//all exhibitions section
+.exhibitionSection {
+  @include padding-inline();
+  .headingPrimary {
+    @include headingPrimary(3rem);
+  }
+  .exhibitions {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: start;
+    width: 70%;
+    margin-inline: auto;
+
+    @include respond(phone) {
+      width: 100%;
+      flex-direction: column;
+    }
+    @include respond(tab-land) {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+    }
+    &__item {
+      width: 22rem;
+      @include respond(phone) {
+        width: 100%;
+      }
+      @include respond(tab-land) {
+        width: 100%;
+      }
+      .image {
+        width: 100%;
+        height: 13rem;
+        margin-bottom: 1.7rem;
+
+        @include respond(phone) {
+          height: 100%;
+        }
+        @include respond(tab-land) {
+          height: 100%;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .info {
+        span {
+          display: block;
+        }
+        width: inherit;
+        .artist {
+          font-size: 1.6rem;
+          font-family: "Archivo black";
+          color: $color-main;
+          font-weight: 900;
+        }
+        .title {
+          font-size: 1.2rem;
+          font-family: "Archivo";
+          color: $color-main;
+          font-weight: 800;
+          text-transform: uppercase;
+        }
+        .date {
+          font-size: 1.29rem;
+          font-family: "Archivo";
+          color: $color-main;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}
+.galleryShow {
+  display: flex;
+  gap: 9rem;
+  align-items: center;
+  margin: 10rem 0rem;
+  overflow-y: scroll;
+  @include scrollbar();
+
+  .artworkBox {
+    img {
+      width: 100vw;
+      // max-height: 100vh;
+    }
+    span {
+      @include respond(phone) {
+        font-size: 1rem;
+      }
+      font-size: 1.6rem;
+      text-align: center;
+
+      display: block;
+      color: $color-main;
+      font-style: italic;
+    }
+  }
+}
+
+.exhibitionInfo {
+  @include padding-inline();
+  text-align: center;
+  color: $color-main;
+  width: 80%;
+  margin: 10rem auto;
+  .namePiece {
+    .exhb {
+      @include respond(phone) {
+        font-size: 1.45rem !important;
+      }
+      @include respond(tab-land) {
+        font-size: 1.5rem;
+      }
+      font-weight: 700;
+      font-size: 4rem;
+      text-transform: uppercase;
+    }
+    .artist {
+      @include respond(phone) {
+        font-size: 1.7rem !important;
+      }
+      @include respond(tab-land) {
+        font-size: 1.8rem;
+      }
+      font-weight: 900;
+      font-size: 7rem;
+    }
+    .piece {
+      @include respond(phone) {
+        font-size: 1.39rem;
+      }
+      @include respond(tab-land) {
+        font-size: 1.39rem;
+      }
+      font-size: 3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .showNature {
+      text-transform: uppercase;
+      @include respond(phone) {
+        font-size: 1.2rem;
+      }
+      @include respond(tab-land) {
+        font-size: 1.2rem;
+      }
+      font-size: 2.6rem;
+    }
+    .datetime {
+      @include respond(phone) {
+        font-size: 1rem;
+      }
+      @include respond(tab-land) {
+        font-size: 1rem;
+      }
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .exhibitionbtns {
+      font-size: 1.62rem;
+      .listArtworks__btn,
+      .artistInfo__btn {
+        margin: 10px;
+        font-weight: 800;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.art_pararaph {
+  // including a mixin with a color parameter
+  @include artparagraph($color-secondary);
+  background-color: $color-main;
+  margin: 20rem 0px;
+  padding: 3rem;
+  position: relative;
+  @include respond(phone) {
+    margin: 10rem 0px;
+  }
+}
+
+.thegal {
+  margin: 10rem 0px;
+  @include padding-inline();
+  .galSectionTitle {
+    @include titles();
+  }
+  .artworkSection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    @include respond(phone) {
+      justify-content: center;
+    }
+    @include respond(tab-land) {
+      justify-content: center;
+    }
+
+    .artwork {
+      width: 30rem;
+      margin-bottom: 5rem;
+      .galimages {
+        margin-bottom: 2rem;
+        img {
+          cursor: pointer;
+          width: 100%;
+          @include respond(phone) {
+            width: 100%;
+          }
+        }
+      }
+      .info {
+        color: $color-main;
+        max-width: 31.49rem;
+        @include respond(phone) {
+          max-width: none;
+        }
+        @include contentInfo();
+        .devis {
+          font-size: 1.45rem;
+          color: $color-main;
+          border: 1px solid $color-main;
+          padding: 5px 1rem;
+          margin-top: 1rem;
+          display: inline-block;
+          &:hover {
+            background-color: $color-main;
+            color: $color-secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.quote {
+  font-size: 6rem;
+  text-align: center;
+  margin: 30rem 0px;
+  color: $color-main;
+  font-style: italic;
+  font-weight: 400;
+  padding-inline: 2rem;
+  @include respond(phone) {
+    margin: 10rem 0px;
+    font-size: 2.3rem;
+  }
+  @include respond(tab-land) {
+    margin: 10rem 0px;
+    font-size: 2.3rem;
+  }
+}
+.Featured {
+  @include padding-inline();
+  display: flex;
+  gap: 2rem;
+
+  justify-content: center;
+  @include respond(phone) {
+    flex-direction: column !important;
+  }
+  @include respond(tab-land) {
+    flex-direction: column !important;
+  }
+  .featuredBox {
+    color: $color-main;
+    margin-inline: auto;
+    span {
+      display: block;
+      img {
+        cursor: pointer;
+        width: 100%;
+        max-height: 90vh;
+        display: block;
+        margin-bottom: 1rem;
+      }
+    }
+    @include respond(phone) {
+      .artistName {
+        font-size: 1.5rem !important;
+      }
+      .pieceTitle {
+        font-size: 1rem !important;
+      }
+      .dimensions {
+        font-size: 1rem !important;
+      }
+      .medium {
+        font-size: 1rem !important;
+      }
+    }
+    .artistName {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .pieceTitle {
+      font-size: 1.8rem;
+      font-style: italic;
+    }
+    .dimensions {
+      font-size: 1.7rem;
+    }
+    .medium {
+      font-size: 1.5rem;
+    }
+  }
+}
+.aboutArtist {
+  @include padding-inline();
+  margin: 20rem 0px;
+  @include respond(phone) {
+    margin: 10rem 0px;
+  }
+  .aboutSectionTitle {
+    @include titles();
+  }
+  .artistBox {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    @include respond(phone) {
+      flex-direction: column;
+    }
+    @include respond(tab-land) {
+      flex-direction: column;
+    }
+    .artistBoxImg {
+      width: 50rem;
+      @include respond(phone) {
+        width: 100%;
+      }
+      @include respond(tab-land) {
+        width: 100%;
+      }
+    }
+    .artistInfo {
+      @include respond(phone) {
+        width: 100%;
+      }
+      @include respond(tab-land) {
+        width: 100%;
+      }
+      cursor: default;
+      width: 50%;
+
+      color: $color-main;
+      position: relative;
+      .artistName {
+        @include respond(phone) {
+          font-size: 3rem;
+          margin-top: 1rem;
+          border: none;
+        }
+        @include respond(tab-land) {
+          border: none;
+        }
+        font-size: 5rem;
+        font-weight: 200;
+        border-bottom: 1px solid $color-main;
+        padding-bottom: 3px;
+        display: inline-block;
+      }
+      .otherInfo {
+        @include respond(phone) {
+          height: auto;
+        }
+        margin: 2rem 0px;
+        padding-right: 2rem;
+        height: 46vh;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          width: 4px;
+          border-radius: 2rem;
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: rgb(184, 183, 183);
+          border-radius: 2rem;
+        }
+        article {
+          span {
+            font-size: 2.7rem;
+            font-weight: 900;
+          }
+        }
+        .bio {
+          font-size: 1.8rem;
+          color: $color-main;
+          @include respond(phone) {
+            font-size: 1.3rem;
+          }
+        }
+        .engContent {
+          margin-top: 4rem;
+        }
+      }
+      .linkToArtist {
+        position: absolute;
+        right: 0;
+        color: $color-main;
+        font-size: 1.8rem;
+        font-weight: 600;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        transition: 0.2s ease-in-out;
+        @include respond(phone) {
+          position: unset;
+          display: block;
+          text-align: center;
+          border: 1px solid $color-main;
+        }
+
+        &:hover {
+          transform: scale(1.04);
+        }
+      }
+    }
+  }
+}
+.popupArtwork {
+  @include padding-inline();
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $color-secondary;
+  z-index: 10000;
+
+  .close {
+    z-index: 10000;
+    position: fixed;
+    font-size: 4rem;
+    color: $color-main;
+    cursor: pointer;
+    margin-top: 2rem;
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+    @include respond(phone) {
+      flex-direction: column !important;
+      gap: 2rem;
+    }
+    @include respond(tab-land) {
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+    }
+    img {
+      max-width: 70rem;
+      max-height: 98vh;
+      @include respond(phone) {
+        width: 100% !important;
+      }
+      @include respond(tab-land) {
+        max-height: 70vh;
+      }
+    }
+    .popupInfo {
+      @include contentInfo();
+    }
+  }
+}
+.aboutArtists {
+  @include respond(phone) {
+    margin: 10rem 0px;
+  }
+  margin: 20rem 0px;
+  @include padding-inline();
+  .artistNamesSection {
+    @include titles();
+  }
+  .artistLayout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    @include respond(phone) {
+      flex-direction: column;
+      justify-content: center;
+    }
+    @include respond(tab-land) {
+      flex-direction: column;
+    }
+
+    .theArtist {
+      width: 30rem;
+      @include respond(phone) {
+        width: 100% !important;
+      }
+      @include respond(tab-land) {
+        width: 70%;
+        margin-inline: auto;
+      }
+      .box {
+        height: 30rem;
+        width: inherit;
+        @include respond(phone) {
+          width: 100%;
+        }
+        @include respond(tab-land) {
+          width: 100%;
+        }
+      }
+      a {
+        width: 90%;
+        color: $color-main;
+        font-size: 1.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-top: 1rem;
+        display: block;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          transform: scale(1.07);
+        }
+        @include respond(phone) {
+          text-align: center;
+          font-size: 1.5rem;
+        }
+        @include respond(tab-land) {
+          text-align: left;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+.video {
+  width: 86vw;
+  max-height: 50vw;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+  @include respond(phone) {
+    width: 100%;
+  }
+}

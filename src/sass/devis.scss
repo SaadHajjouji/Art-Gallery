@@ -1,0 +1,58 @@
+.devisSection {
+  margin: 10rem;
+  @include respond(phone) {
+    margin-inline: 1rem;
+  }
+}
+.formAndImgBox {
+  //   align-items: center;
+  form {
+    h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+    .form-floating > input {
+      height: 5.5rem;
+      font-size: 2rem;
+
+      &:focus {
+        font-size: 2rem;
+      }
+    }
+    .form-floating > label {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
+    .submitButton {
+      button {
+        padding: 1rem;
+        font-size: 1.6rem;
+        background-color: $color-secondary;
+        border: 1px solid $color-main;
+        color: $color-main;
+      }
+    }
+  }
+  .imagebox {
+    width: 50% !important;
+    height: 50% !important;
+
+    img {
+      width: 100% !important;
+    }
+  }
+  @include respond(phone) {
+    flex-direction: column;
+    gap: 2rem;
+    form {
+      width: 100% !important;
+    }
+    .imagebox {
+      width: 100% !important;
+      img {
+        width: 100% !important;
+      }
+    }
+  }
+}

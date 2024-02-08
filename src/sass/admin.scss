@@ -1,0 +1,97 @@
+.loginPage {
+  height: 100vh;
+  width: 50%;
+  margin: 0 auto;
+  img {
+    width: 100%;
+    margin: 5rem 0px 2rem 0px;
+  }
+  form {
+    input {
+      height: 5rem;
+      font-size: 2rem;
+    }
+    label {
+      font-size: 3rem;
+    }
+    button {
+      font-size: 2.6rem;
+    }
+  }
+}
+
+.admindashboard {
+  font-family: "archivo";
+  h1 {
+    margin-top: 7rem;
+    font-size: 5.3rem;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 4.1rem;
+    font-weight: 600;
+    color: $color-main;
+    border-bottom: 3px solid $color-main;
+    display: inline-block;
+    margin-bottom: 2.4rem;
+  }
+  @include padding-inline();
+  .head {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      width: 20%;
+      @include respond(phone) {
+        width: 40%;
+      }
+    }
+    button {
+      @include respond(phone) {
+        font-size: 1.3rem;
+      }
+      font-size: 3rem;
+      padding: 0.7rem 1.3rem;
+    }
+  }
+  section {
+    @include respond(phone) {
+      width: 100%;
+    }
+    margin: 10rem 0px;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    table {
+      font-size: 1.8rem;
+      @include respond(phone) {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+.popupImgAdminPage {
+  animation-name: form;
+  animation-duration: 0.4s;
+  transition: 0.5s ease-in-out;
+  position: fixed;
+  width: 30vw;
+  left: 20%;
+  margin: 0 auto;
+  z-index: 99999999;
+  background-color: white;
+  @include respond(phone) {
+    left: 0;
+  }
+  .close {
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  img {
+    width: inherit;
+    display: block;
+    padding: 4rem;
+  }
+}

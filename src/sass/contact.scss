@@ -1,0 +1,143 @@
+.contactForm {
+  font-family: "archivo";
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-main;
+  padding: 2rem;
+  @include respond(phone) {
+    flex-direction: column-reverse !important;
+    padding: unset;
+  }
+  @include respond(tab-land) {
+    flex-direction: column-reverse;
+    padding: unset;
+  }
+  .galInfo {
+    padding: 3rem;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @include respond(phone) {
+      width: unset !important;
+    }
+    @include respond(tab-land) {
+      width: unset;
+    }
+    img {
+      width: 100%;
+    }
+    span {
+      display: block;
+      font-weight: 800;
+      font-size: 1.45rem;
+      color: $color-secondary;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+      .icon {
+        color: $color-secondary;
+        margin-right: 8px;
+        font-size: 2rem;
+      }
+    }
+  }
+  .formSection {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4rem;
+    padding: 3rem;
+
+    @include respond(phone) {
+      gap: 2rem;
+    }
+    @include respond(tab-land) {
+      width: 100%;
+    }
+    h1 {
+      color: $color-secondary;
+
+      font-size: 5rem;
+      font-weight: 800;
+      @include respond(phone) {
+        font-size: 2rem;
+      }
+    }
+    form {
+      input {
+        border: none;
+        border-bottom: 1px solid $color-secondary;
+        display: block;
+        margin: 0px 0px 3rem 0px;
+        height: 4rem;
+        width: 100%;
+        transition: 0.3s ease-in-out;
+        background-color: $color-main;
+
+        color: $color-secondary;
+        font-size: 2rem;
+        &:focus {
+          outline: none;
+        }
+        &::placeholder {
+          color: white;
+          outline: none;
+          font-size: 2rem;
+        }
+        &:-webkit-autofill {
+          box-shadow: 0 0 0 1000px #000000 inset !important;
+          -webkit-box-shadow: 0 0 0 1000px $color-main inset !important;
+          -webkit-text-fill-color: $color-secondary !important;
+        }
+      }
+      button {
+        border: 1px solid $color-secondary;
+        color: $color-secondary;
+        padding: 0.8rem 2rem;
+
+        font-size: 1.5rem;
+        &:hover {
+          background-color: $color-secondary;
+          color: $color-main;
+        }
+      }
+    }
+    .viewMap {
+      display: inline-block;
+      text-align: left;
+      color: $color-secondary;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.map {
+  .cancelMap {
+    position: fixed;
+    font-size: 5rem;
+    z-index: 2000;
+    right: 0;
+    margin: 2rem;
+    color: $color-main;
+    cursor: pointer;
+  }
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  iframe {
+    width: 100vw;
+    height: 100vh;
+  }
+}

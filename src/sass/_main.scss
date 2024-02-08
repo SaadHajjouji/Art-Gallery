@@ -1,0 +1,36 @@
+//colors
+$color-main: rgb(0, 0, 0);
+$color-secondary: rgb(255, 255, 255);
+$color-text: #8f8d8d;
+///padding-inline main
+$padding-inline-main: 9rem;
+$padding-inline-phone: 2rem;
+$padding-inline-tab: 3rem;
+/// Pages
+
+/// base
+@import "./base/base";
+///homepage
+@import "./homepage";
+//exhibition page
+@import "./exhibitions";
+// artists
+@import "./artists.scss";
+// events
+@import "./events.scss";
+//the gallery
+@import "./theGallery.scss";
+// contact
+@import "./contact.scss";
+//devis
+@import "./devis.scss";
+// admin pages
+@import "./admin.scss";
+// loading screen
+@import "./LoadingScreen.scss";
+///nfts
+@import "./nfts.scss";
+// 360 tours
+@import "./360tours.scss";
+
+

@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&family=Vidaloka&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@300;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
+}
+
+html {
+  //this defines what 1rem is . bcs the default is 16px so 10/16*100 is 62.5%
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  @media (max-width: 37.5em) {
+    // padding-inline: 2rem !important;
+  }
+  @media (max-width: 75em) {
+    // padding-inline: 4rem;
+  }
+  // padding-inline: 5rem;
+  scrollbar-width: normal;
+  &::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 2rem;
+    padding: 10rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(184, 183, 183);
+    border-radius: 2rem;
+  }
+}
+li {
+  list-style-type: none;
+}
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+a,
+a:hover,
+a:visited,
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+@mixin padding-inline {
+  padding-inline: $padding-inline-main;
+  @include respond(phone) {
+    padding-inline: $padding-inline-phone;
+  }
+  @include respond(tab-land) {
+    padding-inline: $padding-inline-tab;
+  }
+}

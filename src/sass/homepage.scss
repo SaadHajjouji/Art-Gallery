@@ -1,0 +1,772 @@
+/* 
+
+breakpoint argument choices:
+-phone
+-tab-port
+-tab-land
+-big desktop
+*/
+
+@mixin headingPrimary($mb) {
+  text-transform: uppercase;
+  color: $color-main;
+  text-align: center;
+  font-family: "Archivo black";
+  font-weight: lighter;
+  font-size: 3rem;
+  margin: 10rem 0px $mb 0px;
+}
+@mixin sectionSeperator {
+  margin-top: 10rem;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==phone {
+    @media (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+  @if $breakpoint==tab-port {
+    @media (max-width: 56.25em) {
+      // 900px
+      @content;
+    }
+  }
+  @if $breakpoint==tab-land {
+    @media (max-width: 75em) {
+      // 1200px
+      @content;
+    }
+  }
+  @if $breakpoint==big-desktop {
+    @media (min-width: 95em) {
+      // 1800px
+      @content;
+    }
+  }
+}
+@mixin prevNext {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  margin: 5px;
+  background-color: $color-main;
+  padding: 1rem;
+  cursor: pointer;
+}
+button {
+  border: none;
+  outline: 0;
+  background-color: transparent;
+}
+@mixin buttonPrimary {
+  margin-top: 3rem;
+
+  @include respond(phone) {
+    margin-top: 1rem !important;
+    font-size: 9px;
+    padding: 0.5rem 1rem;
+  }
+  @include respond(tab-land) {
+    margin-top: 1rem;
+  }
+  color: $color-main;
+  font-family: "Raleway";
+  border: 2px solid $color-main;
+  padding: 8px 10px;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+  background-color: transparent;
+}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.header {
+  padding-top: 7rem;
+  @include respond(phone) {
+    margin-top: 1rem;
+    padding-top: unset;
+  }
+  @include respond(tab-land) {
+    margin-top: 1rem;
+    padding-top: unset;
+  }
+  .navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-inline: $padding-inline-main;
+
+    @include respond(phone) {
+      padding-inline: $padding-inline-phone !important;
+      align-items: flex-end;
+    }
+    @include respond(tab-land) {
+      padding-inline: $padding-inline-tab;
+      align-items: flex-end;
+    }
+    .logo {
+      width: 17rem;
+      @include respond(phone) {
+        width: 12rem !important;
+      }
+      @include respond(tab-land) {
+        width: 19rem;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .navList {
+      display: inline-block;
+      @include respond(phone) {
+        display: none;
+      }
+      @include respond(tab-land) {
+        display: none;
+      }
+      color: $color-main;
+      align-items: center;
+      font-weight: 800;
+      &__item {
+        display: inline-block;
+        font-size: 1.4rem;
+        margin-left: 1rem;
+        width: auto;
+        text-transform: uppercase;
+        border-bottom: 1.5px solid transparent;
+
+        &:not(:last-child) {
+          padding-right: 1rem;
+          border-right: 0.2px solid $color-text;
+        }
+        &:hover {
+          transition: 0.5s;
+          a {
+            border-bottom: 1.5px solid $color-main;
+          }
+        }
+      }
+    }
+
+    .subscribeBtn {
+      margin: 0;
+      border: none;
+      outline: none;
+      text-align: center;
+      background-color: transparent;
+      font-family: "archivo";
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      color: $color-main;
+      border-bottom: 1px solid transparent;
+      line-height: 1;
+      transition: 0.5s ease-in-out;
+      &:hover {
+        border-bottom: 1px solid $color-main;
+      }
+      @include respond(phone) {
+        display: none;
+      }
+      @include respond(tab-land) {
+        display: none;
+      }
+    }
+    .mobileNavIcons {
+      display: none;
+      font-size: 3rem;
+      @include respond(phone) {
+        display: block;
+        font-size: 1.89rem !important;
+      }
+      @include respond(tab-land) {
+        display: block;
+        font-size: 2.6rem;
+      }
+    }
+  }
+}
+
+/// mobile navigation
+.mobileNavList {
+  padding-inline: $padding-inline-phone;
+  color: $color-main;
+  font-family: "archivo";
+  font-weight: 800;
+
+  &__list {
+    display: none;
+    margin-top: 2rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    width: 100%;
+    @include respond(tab-land) {
+      display: block;
+    }
+  }
+
+  .additionalNavOptions {
+    font-size: 2rem;
+    margin: 4rem 0px;
+  }
+
+  .icons {
+    font-size: 2.4rem;
+    display: flex;
+    .icon1 {
+      margin-right: 8px;
+    }
+  }
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  background: $color-main;
+  margin-top: 8px;
+}
+main {
+  .flexingSlider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .iconSlide {
+      font-size: 5rem;
+      color: $color-main;
+      margin-inline: 1rem;
+      cursor: pointer;
+      color: $color-main;
+
+      @include respond(phone) {
+        display: none;
+      }
+      @include respond(tab-land) {
+        display: none;
+      }
+    }
+  }
+  ///homepage slider
+  .Slider {
+    width: 100rem;
+    margin-top: 5.4rem;
+    @include respond(phone) {
+      width: 100%;
+    }
+    @include respond(tab-land) {
+      width: 100%;
+    }
+    .Slider_item {
+      //same height and width of image so the text positions relatively to the image
+      width: 100%;
+      margin: 0 auto;
+      height: 65vh;
+      position: relative;
+      animation-name: slide;
+      animation-duration: 0.4s;
+      animation-timing-function: ease-in-out;
+
+      @include respond(phone) {
+        width: inherit !important;
+        height: 25rem !important;
+      }
+      @include respond(tab-land) {
+        width: inherit;
+        height: 30rem;
+      }
+      @include respond(big-desktop) {
+        width: 100% !important;
+        height: 65vh;
+      }
+      .info {
+        position: absolute;
+        z-index: 100;
+        left: 5%;
+        top: 56%;
+        width: 70%;
+        &--name {
+          font-family: "archivo";
+          font-weight: 800;
+          font-size: 3rem;
+          letter-spacing: 1px;
+          line-height: 3.4rem;
+        }
+        &--titles {
+          font-size: 1.3rem;
+          font-weight: 800;
+          margin-bottom: 1rem;
+          font-family: "archivo";
+          text-transform: uppercase;
+        }
+        &--date {
+          font-size: 1rem;
+          font-weight: 800;
+          font-family: "Raleway";
+        }
+        .btn_learnMore {
+          @include buttonPrimary();
+        }
+        @include respond(phone) {
+          top: 120% !important;
+          transform: translateY(-120%) !important;
+          .info {
+            &--name {
+              font-size: 1.34rem !important;
+              line-height: 1.7rem !important;
+            }
+            &--titles {
+              font-size: 1rem !important;
+              margin-bottom: 5px !important;
+            }
+            &--date {
+              font-size: 1rem !important;
+            }
+          }
+        }
+        @include respond(tab-land) {
+          top: 120% !important;
+          transform: translateY(-120%) !important;
+          .info {
+            &--name {
+              font-size: 1.4rem;
+              line-height: 1.7rem;
+            }
+            &--titles {
+              font-size: 1rem;
+              margin-bottom: 5px;
+            }
+            &--date {
+              font-size: 1rem;
+            }
+          }
+        }
+        span {
+          display: block;
+        }
+      }
+    }
+    &__buttons {
+      width: 100%;
+      text-align: end;
+      margin-top: 10px;
+      @include respond(tab-land) {
+        margin-top: 2rem !important;
+        margin: 0 auto;
+        width: inherit;
+      }
+      @include respond(phone) {
+        margin-top: 2rem !important;
+        margin: 0 auto;
+        width: inherit;
+      }
+      @include respond(big-desktop) {
+        margin-top: 1rem !important;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      &-btn {
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        background-color: rgb(156, 154, 154);
+        border: none;
+        margin-inline: 5px;
+        @include respond(tab-land) {
+          margin-inline: 5px;
+        }
+      }
+      .black {
+        background-color: $color-main;
+      }
+    }
+  }
+}
+//footer
+.footer {
+  * {
+    font-family: "archivo";
+    font-weight: 800;
+    color: $color-main;
+  }
+
+  @include respond(phone) {
+    .footer_info {
+      display: flex;
+      gap: 1.3rem !important;
+      flex-direction: column;
+      align-items: center !important;
+    }
+  }
+  @include respond(tab-land) {
+    .footer_info {
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.3rem !important;
+    }
+  }
+  @include sectionSeperator();
+  p {
+    @include respond(phone) {
+      width: 95%;
+      font-size: 1.1rem;
+    }
+    @include respond(tab-land) {
+      width: 90%;
+      font-size: 1.1rem;
+    }
+    font-size: 1.3rem;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 2.7rem;
+  }
+  .hr {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 2.7rem;
+  }
+  .footer_info {
+    margin-bottom: 2.7rem;
+    font-size: 1.5rem;
+    color: $color-main;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    // .credentials {
+    // }
+    .subscribe {
+      text-transform: uppercase;
+    }
+    .socials {
+      .socialIcon {
+        font-size: 2.1rem;
+        margin-inline: 0.8rem;
+      }
+    }
+  }
+}
+//popup newsletter form
+@keyframes form {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.confirm {
+  animation-name: form;
+  animation-duration: 0.4s;
+  transition: 0.5s ease-in-out;
+  position: fixed;
+  width: 80vh;
+  height: auto;
+  left: 0;
+  right: 0;
+  top: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 99999999;
+  background-color: $color-secondary;
+  padding: 5rem;
+  @include respond(phone) {
+    top: 40%;
+    width: 100%;
+  }
+
+  img {
+    @include respond(phone) {
+      width: 19rem;
+    }
+    margin-top: 4rem !important;
+    width: 24rem;
+    margin: 0 auto;
+    display: block;
+  }
+  span {
+    text-align: center;
+    font-size: 2rem;
+    color: $color-main;
+    font-weight: 700;
+    display: block;
+  }
+}
+.popupForm {
+  animation-name: form;
+  animation-duration: 0.4s;
+  transition: 0.5s ease-in-out;
+  position: fixed;
+  width: 70vh;
+  height: auto;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 999;
+  background-color: $color-secondary;
+  @include respond(phone) {
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @include respond(tab-land) {
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  @include respond(tab-port) {
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .icon {
+    display: block;
+    text-align: center;
+    font-size: 5rem;
+    cursor: pointer;
+    margin: 1rem;
+    @include respond(phone) {
+      font-size: 2rem;
+    }
+  }
+  .logo {
+    margin-top: 4rem !important;
+    width: 30rem;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+  }
+  .subscribeheader {
+    text-align: center;
+    display: block;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-family: "archivo";
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: $color-main;
+  }
+  .form {
+    text-align: center;
+    input,
+    select {
+      margin: 0 auto;
+      width: 70%;
+      height: 6rem;
+      border: 1px solid $color-main;
+      margin-bottom: 1.5rem;
+      padding-inline: 3rem;
+      font-family: "archivo";
+      font-weight: 800;
+      font-size: 1.2rem;
+      &:focus,
+      option {
+        color: $color-main;
+        outline: none;
+        font-family: "archivo";
+        font-weight: 800;
+        font-size: 1.2rem;
+      }
+      &::placeholder {
+        color: $color-text;
+        font-family: "archivo";
+        font-weight: 800;
+        font-size: 1.2rem;
+      }
+    }
+    .emailAndbtn {
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      flex-direction: column;
+      align-items: center;
+      input {
+        border-right: 1px solid $color-main;
+        width: 100%;
+        &:focus {
+          color: $color-main;
+          outline: none;
+          font-family: "archivo";
+          font-weight: 800;
+          font-size: 1.2rem;
+        }
+      }
+      button {
+        font-family: "archivo";
+        font-weight: 800;
+        font-size: 2.1rem;
+        width: 40%;
+        height: 6rem;
+        border: 1px solid $color-main;
+        margin-bottom: 1.5rem;
+        &:hover {
+          color: $color-secondary;
+          background-color: $color-main;
+        }
+      }
+    }
+  }
+}
+///opacity
+.wrapper:not(.popupForm) {
+  opacity: 0.3;
+}
+.fullopacity {
+  opacity: 1;
+}
+
+// page scroll button
+.scrollUpThePage {
+  margin-left: $padding-inline-main;
+  @include respond(phone) {
+    margin-left: 1rem;
+  }
+  @include respond(tab-land) {
+    margin-left: 1rem;
+  }
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 1rem;
+  font-size: 4.5rem;
+  cursor: pointer;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
+  padding: 1rem;
+  color: $color-main;
+  border: 1px solid $color-main;
+  transition: 0.1s ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+/// seperator div
+.seperator {
+  height: 1px;
+  width: 1px;
+  @include respond(phone) {
+    margin: 6rem 0px;
+  }
+  @include respond(tab-land) {
+    margin: 6rem 0px;
+  }
+}
+
+//video home
+.vidThegamblers {
+  height: 100vh;
+  width: 100vw;
+  margin: 10rem 0rem;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include respond(phone) {
+    padding-inline: $padding-inline-phone;
+    background-color: unset;
+    margin: 0 !important;
+    height: auto;
+    width: 100%;
+    .vidbtn {
+      width: 100% !important;
+      margin: 0;
+    }
+  }
+
+  @include respond(tab-land) {
+    padding-inline: $padding-inline-phone;
+    background-color: unset;
+    margin: 0 !important;
+    height: unset;
+    width: 100%;
+    .vidbtn {
+      width: 100% !important;
+      margin: 0;
+    }
+  }
+  .vidbtn {
+    @include respond(phone) {
+      margin: unset !important;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5rem auto;
+    width: 70%;
+    gap: 2rem;
+
+    video {
+      @include respond(phone) {
+        width: 100%;
+        height: auto;
+        max-height: 50vw;
+      }
+    }
+    .btnHome {
+      font-size: 2rem;
+      color: white;
+      border: 1px solid white;
+      cursor: pointer;
+      padding: 0.8rem 1rem;
+      font-family: "Raleway";
+      @include respond(phone) {
+        color: black;
+        border: 1px solid black;
+        font-size: 1.475rem;
+        padding: 0.6rem 0.8rem;
+      }
+      text-align: center;
+    }
+  }
+}
+
+.currently {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  @include respond(phone) {
+    margin: unset !important;
+    flex-direction: column-reverse;
+    align-items: unset;
+    gap: 1rem;
+    p {
+      width: 100% !important;
+
+      font-size: 12px !important;
+    }
+    img {
+      width: 100% !important;
+    }
+  }
+  p {
+    width: 48%;
+    font-size: 2rem;
+    border-left: 2px solid burlywood;
+    padding: 12px;
+  }
+  img {
+    width: 40%;
+  }
+}
